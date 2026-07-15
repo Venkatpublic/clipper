@@ -1,3 +1,4 @@
+import 'package:clipper/src/dand.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -13,7 +14,7 @@ class Home extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             color: Colors.red,
@@ -27,6 +28,13 @@ class Home extends StatelessWidget {
             child: Text('Two'),
             alignment: Alignment.center,
           ),
+          Container(
+            color: Colors.grey,
+            width: 200,
+            child: Text('Three'),
+            alignment: Alignment.center,
+          ),
+          Roweer(),
           Container(
             color: Colors.grey,
             width: 200,
