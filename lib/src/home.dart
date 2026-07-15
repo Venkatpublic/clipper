@@ -1,4 +1,5 @@
 import 'package:clipper/src/dand.dart';
+import 'package:clipper/src/nice_button.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -35,7 +36,14 @@ class Home extends StatelessWidget {
             alignment: Alignment.center,
           ),
           Roweer(),
-
+          NiceButton(
+            title: Title(color: Colors.blueAccent, child: Text('wedwdwed')),
+            onpress: () {},
+          ),
+          NiceButton(
+            title: Title(color: Colors.red, child: Text('ewfwefweftyyjtyjyh')),
+            onpress: () {},
+          ),
           Image.asset(
             'assets/img/catm.jpg',
             width: 50,
