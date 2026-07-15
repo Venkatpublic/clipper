@@ -35,11 +35,18 @@ class Home extends StatelessWidget {
             alignment: Alignment.center,
           ),
           Roweer(),
-          Container(
+
+          Image.asset(
+            'assets/img/catm.jpg',
+            width: 50,
+            height: 100,
             color: Colors.grey,
-            width: 200,
-            child: Text('Three'),
-            alignment: Alignment.center,
+            colorBlendMode: BlendMode.multiply,
+          ),
+          Image.asset(
+            'assets/img/cat_new.jpeg',
+            color: Colors.grey,
+            colorBlendMode: BlendMode.multiply,
           ),
         ],
       ),
