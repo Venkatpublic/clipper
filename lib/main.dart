@@ -6,22 +6,33 @@ import 'package:google_fonts/google_fonts.dart';
 void main() {
   runApp(
     MaterialApp(
-      home: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                const Color.fromARGB(255, 25, 1, 68),
-                const Color.fromARGB(255, 87, 3, 242),
-              ],
-            ),
-          ),
-          child: Center(child: Text('Bonkers')),
-        ),
-      ),
+      home: Scaffold(body: GradientContainer(name: 'some')),
     ),
   );
   // runApp(const AutoCropApp());
+}
+
+class GradientContainer extends StatelessWidget {
+  const GradientContainer({super.key, required this.name});
+  final String name;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            const Color.fromARGB(255, 25, 1, 68),
+            const Color.fromARGB(255, 87, 3, 242),
+          ],
+          begin: AlignmentGeometry.topLeft,
+          end: AlignmentGeometry.bottomRight,
+        ),
+      ),
+      child: Center(
+        child: Text(name, style: TextStyle(color: Colors.white, fontSize: 24)),
+      ),
+    );
+  }
 }
 
 class AutoCropApp extends StatelessWidget {
