@@ -4,7 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const AutoCropApp());
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                const Color.fromARGB(255, 25, 1, 68),
+                const Color.fromARGB(255, 87, 3, 242),
+              ],
+            ),
+          ),
+          child: Center(child: Text('Bonkers')),
+        ),
+      ),
+    ),
+  );
+  // runApp(const AutoCropApp());
 }
 
 class AutoCropApp extends StatelessWidget {
