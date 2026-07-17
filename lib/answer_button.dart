@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AnswerButton extends StatelessWidget {
   const AnswerButton({super.key, required this.answer, required this.onAnswer});
@@ -7,7 +8,7 @@ class AnswerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      child: Text(answer, style: TextStyle(color: Colors.white)),
+      child: Text(answer, style: GoogleFonts.laila(color: Colors.white)),
       onPressed: onAnswer,
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color.fromARGB(89, 72, 65, 85),

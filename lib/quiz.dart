@@ -1,3 +1,5 @@
+import 'package:clipper/data/quiz.dart';
+import 'package:clipper/quiz_result.dart';
 import 'package:clipper/quiz_screen.dart';
 import 'package:clipper/quiz_splash.dart';
 import 'package:flutter/material.dart';
@@ -10,17 +12,36 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  List<String> answers = [];
   Widget? currentScreen;
   @override
   void initState() {
-    // TODO: implement initState
     currentScreen = QuizSplash(switchScreen: switchScreen);
     super.initState();
   }
 
   void switchScreen() {
     setState(() {
-      currentScreen = QuizScreen();
+      currentScreen = QuizScreen(onAnswer: onAnswer);
+    });
+  }
+
+  void onAnswer(String answer) {
+    answers.add(answer);
+    if (answers.length == questions.length) {
+      setState(() {
+        currentScreen = QuizResult(
+          chosenAnswers: answers,
+          onRestart: onRestart,
+        );
+      });
+    }
+  }
+
+  void onRestart() {
+    setState(() {
+      currentScreen = QuizSplash(switchScreen: switchScreen);
+      answers = [];
     });
   }
 
