@@ -1,7 +1,7 @@
-import 'package:clipper/quiz.dart';
+import 'package:clipper/expense_tracker/expense_tracker.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Quiz());
+  runApp(ExpenseTracker());
   // runApp(const AutoCropApp());
 }
