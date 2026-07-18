@@ -8,7 +8,34 @@ class ExpenseList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: expenses.length,
-      itemBuilder: (ctx, i) => Text(expenses[i].title),
+      itemBuilder: (ctx, i) => Card(
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 20,
+            right: 20,
+            top: 12,
+            bottom: 12,
+          ),
+          child: Column(
+            children: [
+              Text(expenses[i].title),
+              Row(
+                children: [
+                  Text('\$${expenses[i].amount}'),
+                  Spacer(),
+                  Row(
+                    children: [
+                      Icon(categoryIcons[expenses[i].category]),
+                      SizedBox(width: 10),
+                      Text(expenses[i].date),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
