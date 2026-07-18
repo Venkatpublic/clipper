@@ -1,3 +1,4 @@
+import 'package:clipper/expense_tracker/add_expense.dart';
 import 'package:clipper/expense_tracker/expense_list.dart';
 import 'package:clipper/expense_tracker/models/expense.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class _HomeState extends State<Home> {
     Expense(amount: 100000, category: Category.leisure, title: 'Bale trip'),
   ];
   void openAddExpensePage() {
-    showModalBottomSheet(context: context, builder: (cxt) => Text('hellp'));
+    showModalBottomSheet(context: context, builder: (cxt) => AddExpense());
   }
 
   @override
